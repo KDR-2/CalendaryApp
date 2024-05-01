@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de Hábitos Saludables</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__title">App de Hábitos Saludables</h1>
+  </header>
+  <div id="welcomeModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Bienvenido a la App de Hábitos Saludables</h2>
+      <p>Esta aplicación te ayudará a establecer y seguir hábitos saludables en tu vida diaria.</p>
+      <p>Comienza agregando tus hábitos y sigue tu progreso día a día.</p>
+    </div>
+  </div>
+  <main class="main">
+    <section class="welcome">
+      <h2 class="welcome__title">Bienvenido</h2>
+      <p class="welcome__text">Esta aplicación te ayudará a establecer y seguir hábitos saludables en tu vida diaria.
+      </p>
+      <p class="welcome__text">A continuación, te damos algunos ejemplos de hábitos saludables que podrías comenzar a
+        realizar:</p>
+      <ul class="welcome__list">
+        <li class="welcome__item"><strong>Ejercicio:</strong> Caminar al menos 30 minutos al día.</li>
+        <li class="welcome__item"><strong>Hidratación:</strong> Beber al menos 8 vasos de agua al día.</li>
+        <li class="welcome__item"><strong>Lectura:</strong> Leer un libro durante 20 minutos cada noche.</li>
+        <li class="welcome__item"><strong>Meditación:</strong> Practicar 10 minutos de meditación cada mañana.</li>
+      </ul>
+    </section>
+    <section class="calendar">
+      <h2 class="calendar__title">Calendario</h2>
+      <div class="calendar__container">
+        <!-- Aquí irá el calendario -->
+      </div>
+    </section>
+    <section class="progress">
+      <h2 class="progress__title">Progreso</h2>
+      <div class="progress__container">
+        <!-- Aquí se mostrará el progreso del usuario -->
+        <p class="progress__text">¡Felicidades! Has completado <span class="progress__completed"
+            id="completed-habits">0</span> hábitos hoy.</p>
+      </div>
+    </section>
+    <section class="habits">
+      <h2 class="habits__title">Hábitos</h2>
+      <ul class="habits__list" id="habit-list">
+        <!-- Aquí se listarán los hábitos -->
+      </ul>
+      <form class="habits__form" id="habit-form">
+        <input type="text" class="habits__input" id="habit-input" list="habit-examples"
+          placeholder="Agregar nuevo hábito">
+        <datalist id="habit-examples">
+          <option value="Ejercicio: Caminar al menos 30 minutos al día">
+          <option value="Hidratación: Beber al menos 8 vasos de agua al día">
+          <option value="Lectura: Leer un libro durante 20 minutos cada noche">
+          <option value="Meditación: Practicar 10 minutos de meditación cada mañana">
+        </datalist>
+        <input type="color" class="habits__color" id="habit-color" value="#ff0000">
+        <input type="number" class="habits__time" id="habit-time" placeholder="Tiempo (minutos)">
+        <button type="submit" class="habits__button">Agregar</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__text">&copy; 2024 App de Hábitos Saludables</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
