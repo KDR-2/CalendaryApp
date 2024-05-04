@@ -1,103 +1,341 @@
+/* Estilos generales */
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 800px;
-  margin: 50px auto;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
 }
 
-.section {
-  margin-bottom: 30px;
-}
-
-.title {
-  color: #333;
-}
-
-.welcome {
-  background-color: #f1f1f1;
+/* Estilos del header */
+.header {
+  background-color: #e0e0e0;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.motivation {
-  font-style: italic;
+/* Estilos del main */
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .calendar {
-  background-color: #fff;
-  padding: 20px;
+  flex: 1;
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.calendar-wrapper {
-  /* Estilos para el calendario */
+.inputs {
+  flex: 1;
 }
 
-.activities {
-  margin-top: 20px;
-}
-
-.add-activity {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
-}
-
-.form {
+/* Estilos del footer */
+.footer {
+  background-color: #e0e0e0;
   text-align: center;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 10px;
-}
-
-.form-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-gap: 10px;
-}
-
-.input-half {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.input-full {
-  /* width: 100%; */
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  /* resize: none; */
+/* Modales */
+/* Estilos para los modales */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
   cursor: pointer;
-  padding: 10px 20px;
+}
+
+/* Modales */
+/* Estilos para los modales */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilos para los inputs */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px;
 }
 
-.button:hover {
-  background-color: #0056b3;
+textarea {
+  resize: vertical;
 }
 
-/* CSS DEL CALENDARIO */
+/* Estilos para los botones */
+button {
+  background-color: #007bff; /* Azul */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilos para los inputs */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Estilos para los botones */
+button {
+  background-color: #007bff; /* Azul */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilos para el calendario */
+.calendar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto; /* Centrado horizontal */
+}
+
+#calendar {
+  max-width: 100%;
+  height: 300px;
+  cursor: pointer;
+}
+
+/* Estilos para las tablas del calendario */
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Estilos para las cabeceras de las tablas */
+.calendar th {
+  background-color: #f0f0f0; /* Fondo gris */
+  border-radius: 10px 10px 0 0; /* Bordes redondeados solo arriba */
+  border-bottom: 2px solid #ccc; /* Separación entre cabeceras */
+  padding: 10px;
+}
+
+/* Estilos para las celdas de las tablas */
+.calendar td {
+  padding: 10px;
+  text-align: center; /* Centrar los números */
+}
+
+/* Estilos específicos para las celdas que contienen números */
+.calendar td:not(:empty) {
+  border: none; /* Eliminar el borde */
+  border-radius: 0; /* Eliminar el redondeo */
+}
+
+/* Estilos para los botones de navegación */
+.navigation {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation button {
+  background-color: #007bff; /* Azul */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navigation button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+#current-month-year {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#events-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+#events-section h2 {
+  margin-bottom: 10px;
+}
+
+#day-events {
+  list-style: none;
+  padding: 0;
+}
+
+#day-events li {
+  margin-bottom: 10px;
+}
+
+/* Estilos para los días con eventos */
+.calendar td.has-event {
+  background-color: #b633a4; /* Violeta */
+  color: #fff; /* Texto blanco */
+}
+
+.calendar td.selected-day {
+  background-color: #007bff; /* Azul */
+}
+
+@media screen and (max-width: 767px) {
+  .calendar {
+    max-width: 90%; /* Ancho máximo para pantallas de móviles */
+    margin: 20px auto; /* Centrado horizontal */
+    overflow-x: auto; /* Permitir desplazamiento horizontal en pantallas pequeñas */
+  }
+
+  .main {
+    flex-direction: column-reverse; /* Reorganizar el contenido en columnas en pantallas pequeñas */
+    align-items: center; /* Centrar los elementos en el eje horizontal */
+  }
+
+  .inputs {
+    width: 100%; /* Asegurar que los inputs ocupen todo el ancho en dispositivos móviles */
+    margin-top: 20px; /* Añadir un poco de espacio entre el calendario y los inputs */
+  }
+
+  /* Estilos para los botones de agregar eventos */
+  .add-event-btn {
+    position: sticky;
+    bottom: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .add-event-btn:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+  }
+}

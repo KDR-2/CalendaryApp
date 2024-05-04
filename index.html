@@ -1,48 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js"></script>
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recordatorios de Ejercicio</title>
+  <title>Calendario</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <section class="section welcome">
-      <h1 class="title">Bienvenido</h1>
-      <p>¡Hola! Te damos la bienvenida a nuestra aplicación de recordatorios de ejercicios. ¡Mantén tu motivación alta!
-      </p>
-      <blockquote class="motivation">"El sudor es la grasa llorando"</blockquote>
-    </section>
+  <header class="header">
+    <h1>Bienvenido a la Aplicación de Calendario</h1>
+    <p>Aquí puedes administrar tus eventos de manera fácil y elegante.</p>
+  </header>
 
-    <section class="section calendar">
-      <h2 class="title">Calendario</h2>
+  <main class="main">
+    <section class="calendar">
+      <div class="navigation">
+        <button id="prev-month">&lt;</button>
+        <span id="current-month-year"></span>
+        <button id="today-btn">Hoy</button>
+        <button id="next-month">&gt;</button>
+      </div>
       <div id="calendar"></div>
-      <div class="activities">
-        <!-- Lista de actividades -->
+      <div id="events-section">
+        <h2>Eventos del día:</h2>
+        <ul id="day-events"></ul>
       </div>
     </section>
 
-    <section class="section add-activity">
-      <h2 class="title">Agregar Actividad</h2>
-      <div class="form">
-        <div class="form-group">
-          <input type="date" id="exercise-date" class="input-half" placeholder="Fecha">
-          <input type="time" id="exercise-time" class="input-half" placeholder="Hora">
+
+
+    <section class="inputs">
+      <!-- Botón para abrir el modal de añadir evento -->
+      <button id="add-event-btn">Añadir</button>
+
+      <!-- Botón para abrir el modal de editar evento -->
+      <button id="edit-event-btn">Editar</button>
+
+      <!-- Botón para abrir el modal de eliminar evento -->
+      <button id="delete-event-btn">Eliminar Evento</button>
+
+      <!-- Modal para añadir evento -->
+      <div id="add-event-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Añadir Evento</h2>
+          <form id="add-event-form">
+            <div class="input-group">
+              <label for="start-date">Fecha de inicio:</label>
+              <input type="date" id="start-date" name="start-date">
+
+              <label for="start-time">Hora de inicio:</label>
+              <input type="time" id="start-time" name="start-time">
+            </div>
+
+            <div class="input-group">
+              <label for="end-date">Fecha final:</label>
+              <input type="date" id="end-date" name="end-date">
+
+              <label for="end-time">Hora final:</label>
+              <input type="time" id="end-time" name="end-time">
+            </div>
+
+
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title">
+
+            <label for="note">Nota:</label>
+            <textarea id="note" name="note"></textarea>
+
+            <input type="checkbox" id="enable-notifications" name="enable-notifications">
+            <label for="enable-notifications">Activar notificaciones</label>
+
+            <button type="submit">Agregar</button>
+          </form>
         </div>
-        <input type="text" id="exercise-title" class="input-full" placeholder="Título del recordatorio">
-        <textarea id="exercise-note" class="input-full" placeholder="Nota"></textarea>
-        <button id="button" class="button">Agregar Actividad</button>
       </div>
+
+      <!-- Modal para editar evento -->
+      <div id="edit-event-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Editar Evento</h2>
+          <!-- Contenido del modal para editar evento -->
+        </div>
+      </div>
+
+      <!-- Modal para eliminar evento -->
+      <div id="delete-event-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Eliminar Evento</h2>
+          <!-- Contenido del modal para eliminar evento -->
+        </div>
+      </div>
+
     </section>
-  </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 Todos los derechos reservados.</p>
+  </footer>
+
 
 </body>
 
